@@ -7,6 +7,13 @@ import api from '../../services/api';
 
 import logoImg from '../../assets/lordlogo.png';
 import fellow from '../../assets/fellow.jpg';
+import two from '../../assets/two.jpg';
+import returnof from '../../assets/return.jpg';
+import une from '../../assets/une.jpg';
+import desolation from '../../assets/desolation.jpg';
+import five from '../../assets/five.jpg';
+
+var imagem = fellow;
 
 const token = '-6LyhtF0oCSWfcdu7l3B';
 interface MovieParams {
@@ -38,10 +45,28 @@ const Repository: React.FC = () => {
                 .then(responde => {
                     console.log(responde.data);
                     setMovie(responde.data);
+                    if (movie?._id == '5cd95395de30eff6ebccde5d') {
+                        imagem = returnof;
+                    }
                 });
         }
         loadData();
     }, [params.movie]);
+
+    useEffect(() => {
+        loadimg();
+    }, []);
+
+    function loadimg() {
+        if (movie) {
+            if (movie._id == '5cd95395de30eff6ebccde5d') {
+                imagem = returnof;
+            }
+            if (movie._id == '5cd95395de30eff6ebccde5b') {
+                imagem = two;
+            }
+        }
+    }
 
     return (
         <>
@@ -51,9 +76,10 @@ const Repository: React.FC = () => {
                     <FiChevronLeft size={20}></FiChevronLeft>Return
                 </Link>
             </Title>
+
             {movie && (
                 <Container>
-                    <img src={fellow} alt="poster" />
+                    <img src={imagem} alt="poster" />
                     <h1>{movie.name}</h1>
                     <p>
                         Run Time In Minutes:

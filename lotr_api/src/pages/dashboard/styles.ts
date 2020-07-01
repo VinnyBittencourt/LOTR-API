@@ -16,7 +16,7 @@ export const Container = styled.div`
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 80px;
 
     a {
@@ -24,9 +24,10 @@ export const Container = styled.div`
         border-radius: 15px;
         color: #58470d;
         padding: 15px;
+        margin: 0 5px;
         margin-bottom: 15px;
         text-decoration: none;
-        width: 300px;
+        width: 295px;
 
         display: flex;
         align-items: center;
