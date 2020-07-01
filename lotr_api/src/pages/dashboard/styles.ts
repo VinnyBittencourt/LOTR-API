@@ -12,19 +12,20 @@ export const Title = styled.div`
     }
 `;
 
-export const Container = styled.ul`
+export const Container = styled.div`
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 80px;
 
-    li {
+    a {
         background: #f5eed6;
         border-radius: 15px;
         color: #58470d;
         padding: 15px;
         margin-bottom: 15px;
+        text-decoration: none;
 
         display: flex;
         align-items: center;

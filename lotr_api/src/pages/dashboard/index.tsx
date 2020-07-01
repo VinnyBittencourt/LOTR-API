@@ -6,22 +6,39 @@ import { Title, Container } from './styles';
 import logoImg from '../../assets/lordlogo.png';
 import elfimg from '../../assets/elf.png';
 
+import fellow from '../../assets/fellow.jpg';
+import two from '../../assets/two.jpg';
+import returnof from '../../assets/return.jpg';
+import une from '../../assets/une.jpg';
+import desolation from '../../assets/desolation.jpg';
+import five from '../../assets/five.jpg';
+
 const token = '-6LyhtF0oCSWfcdu7l3B';
 
+interface Movie {
+    _id: string;
+    name: string;
+    runtimeInMinutes: number;
+    budgetInMillions: number;
+    boxOfficeRevenueInMillions: number;
+    academyAwardNominations: number;
+    academyAwardWins: number;
+}
+
 const Dashboard: React.FC = () => {
-    const [characters, setCharacters] = useState([]);
+    const [movie, setMovie] = useState<Movie[]>([]);
 
     useEffect(() => {
         async function loadData(): Promise<void> {
             const response = await api
-                .get('/character', {
+                .get('/movie', {
                     headers: {
                         Authorization: 'Bearer ' + token,
                     },
                 })
                 .then(responde => {
                     console.log(responde.data.docs);
-                    setCharacters(responde.data.docs);
+                    setMovie(responde.data.docs);
                 });
         }
         loadData();
@@ -31,18 +48,14 @@ const Dashboard: React.FC = () => {
         <>
             <Title>
                 <img src={logoImg} alt="LOTR" />
-                <p>All Middle Earth's characters</p>
+                <p>All Middle Earth movies' information</p>
             </Title>
             <Container>
-                <li>
-                    <img src={elfimg} alt="race" />
-                    <span>Legolas</span>
-                </li>
-                {characters.map(char => (
-                    <li>
+                {movie.map(char => (
+                    <Link to="#" key={char._id}>
                         <img src={elfimg} alt="race" />
                         <span>{char.name}</span>
-                    </li>
+                    </Link>
                 ))}
             </Container>
         </>
