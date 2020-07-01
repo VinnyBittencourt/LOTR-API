@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { Header, Container, Issues } from './styles';
+// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { Header } from './styles';
 
 import api from '../../services/api';
 
