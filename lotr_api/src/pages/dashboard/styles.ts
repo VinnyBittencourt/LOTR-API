@@ -26,6 +26,7 @@ export const Container = styled.div`
         padding: 15px;
         margin-bottom: 15px;
         text-decoration: none;
+        width: 300px;
 
         display: flex;
         align-items: center;

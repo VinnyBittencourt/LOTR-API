@@ -12,17 +12,13 @@ import returnof from '../../assets/return.jpg';
 import une from '../../assets/une.jpg';
 import desolation from '../../assets/desolation.jpg';
 import five from '../../assets/five.jpg';
+var imgem = fellow;
 
 const token = '-6LyhtF0oCSWfcdu7l3B';
 
 interface Movie {
     _id: string;
     name: string;
-    runtimeInMinutes: number;
-    budgetInMillions: number;
-    boxOfficeRevenueInMillions: number;
-    academyAwardNominations: number;
-    academyAwardWins: number;
 }
 
 const Dashboard: React.FC = () => {
@@ -52,7 +48,7 @@ const Dashboard: React.FC = () => {
             </Title>
             <Container>
                 {movie.map(char => (
-                    <Link to="#" key={char._id}>
+                    <Link to={`/detail/${char._id}`} key={char._id}>
                         <img src={elfimg} alt="race" />
                         <span>{char.name}</span>
                     </Link>
