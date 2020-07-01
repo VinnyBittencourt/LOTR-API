@@ -1,17 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
-import githubbackground from '../assets/bg.png';
+import bckground from '../assets/bg.png';
 
 export default createGlobalStyle`
+@font-face{
+    font-family: "Middleearth";
+    src: url("../assets/Middleearth-ao6m.ttf");
+}
     *{
         margin: 0;
         padding: 0;
         outline: 0;
         box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
+        /* font-family: 'Roboto', sans-serif; */
+        font-family: 'Middleearth';
     }
 
     body{
-        background: url(${githubbackground})center center/cover;
+        background: url(${bckground})center center/cover;
         /* background-size: */
         background-repeat: no-repeat;
         /* background-position: right top; */
