@@ -6,6 +6,7 @@ import { Container, Title } from './styles';
 import api from '../../services/api';
 
 import logoImg from '../../assets/lordlogo.png';
+import fellow from '../../assets/fellow.jpg';
 
 const token = '-6LyhtF0oCSWfcdu7l3B';
 interface MovieParams {
@@ -52,7 +53,7 @@ const Repository: React.FC = () => {
             </Title>
             {movie && (
                 <Container>
-                    <img src="#" alt="poster" />
+                    <img src={fellow} alt="poster" />
                     <h1>{movie.name}</h1>
                     <p>
                         Run Time In Minutes:
@@ -68,11 +69,11 @@ const Repository: React.FC = () => {
                     </p>
                     <p>
                         Academy Award Nominations:
-                        <span>$ {movie.academyAwardNominations}</span>
+                        <span>{movie.academyAwardNominations}</span>
                     </p>
                     <p>
                         Academy Awards Wins:
-                        <span>$ {movie.academyAwardWins}</span>
+                        <span className="win">{movie.academyAwardWins}</span>
                     </p>
                 </Container>
             )}
