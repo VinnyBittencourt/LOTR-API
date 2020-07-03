@@ -28,6 +28,7 @@ export const Container = styled.div`
         margin-bottom: 15px;
         text-decoration: none;
         width: 295px;
+        text-align: center;
 
         display: flex;
         align-items: center;
