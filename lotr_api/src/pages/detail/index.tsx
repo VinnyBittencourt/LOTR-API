@@ -12,6 +12,8 @@ import returnof from '../../assets/return.jpg';
 import une from '../../assets/une.jpg';
 import desolation from '../../assets/desolation.jpg';
 import five from '../../assets/five.jpg';
+import hob from '../../assets/hobbit.jpg';
+import lotr from '../../assets/lotr.jpg';
 
 const token = '-6LyhtF0oCSWfcdu7l3B';
 interface MovieParams {
@@ -37,6 +39,30 @@ const filmeimagem = [
         id: '5cd95395de30eff6ebccde5b',
         imagem: two,
     },
+    {
+        id: '5cd95395de30eff6ebccde5c',
+        imagem: fellow,
+    },
+    {
+        id: '5cd95395de30eff6ebccde5a',
+        imagem: five,
+    },
+    {
+        id: '5cd95395de30eff6ebccde59',
+        imagem: desolation,
+    },
+    {
+        id: '5cd95395de30eff6ebccde58',
+        imagem: une,
+    },
+    {
+        id: '5cd95395de30eff6ebccde57',
+        imagem: hob,
+    },
+    {
+        id: '5cd95395de30eff6ebccde56',
+        imagem: lotr,
+    },
 ];
 
 const Repository: React.FC = () => {
@@ -54,7 +80,6 @@ const Repository: React.FC = () => {
                     },
                 })
                 .then(responde => {
-                    console.log(responde.data);
                     setMovie(responde.data);
                     setSwitcher(true);
                 });
@@ -81,7 +106,6 @@ const Repository: React.FC = () => {
     }
 
     const nome = filmeimagem.filter(i => i.id === params.movie);
-    console.log(nome[0].imagem);
     return (
         <>
             <Title>

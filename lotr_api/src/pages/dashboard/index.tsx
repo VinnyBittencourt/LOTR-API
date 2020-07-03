@@ -12,6 +12,7 @@ import returnof from '../../assets/return.jpg';
 import une from '../../assets/une.jpg';
 import desolation from '../../assets/desolation.jpg';
 import five from '../../assets/five.jpg';
+
 var imgem = fellow;
 
 const token = '-6LyhtF0oCSWfcdu7l3B';
@@ -33,7 +34,6 @@ const Dashboard: React.FC = () => {
                     },
                 })
                 .then(responde => {
-                    console.log(responde.data.docs);
                     setMovie(responde.data.docs);
                 });
         }
