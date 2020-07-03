@@ -5,7 +5,7 @@
 ![ScreenShot](https://raw.github.com/VinnyBittencourt/LOTR-API/master/lotr_api/src/assets/img02.png)
 
 ### Comando para rodar o projeto:
-- yarn start
+- yarn start;
 
 ### Projeto feito por:
 - Vinícius de Ataídes Bittencourt;
