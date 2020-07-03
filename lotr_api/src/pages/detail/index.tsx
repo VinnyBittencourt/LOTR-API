@@ -13,8 +13,6 @@ import une from '../../assets/une.jpg';
 import desolation from '../../assets/desolation.jpg';
 import five from '../../assets/five.jpg';
 
-var imagem = fellow;
-
 const token = '-6LyhtF0oCSWfcdu7l3B';
 interface MovieParams {
     movie: string;
@@ -30,9 +28,22 @@ interface Movie {
     academyAwardWins: number;
 }
 
+const filmeimagem = [
+    {
+        id: '5cd95395de30eff6ebccde5d',
+        imagem: returnof,
+    },
+    {
+        id: '5cd95395de30eff6ebccde5b',
+        imagem: two,
+    },
+];
+
 const Repository: React.FC = () => {
     const { params } = useRouteMatch<MovieParams>();
     const [movie, setMovie] = useState<Movie | null>(null);
+    const [imagem2, setImagem2] = useState(fellow);
+    const [switcher, setSwitcher] = useState(false);
 
     useEffect(() => {
         async function loadData(): Promise<void> {
@@ -45,29 +56,32 @@ const Repository: React.FC = () => {
                 .then(responde => {
                     console.log(responde.data);
                     setMovie(responde.data);
-                    if (movie?._id == '5cd95395de30eff6ebccde5d') {
-                        imagem = returnof;
-                    }
+                    setSwitcher(true);
                 });
         }
         loadData();
     }, [params.movie]);
 
-    useEffect(() => {
-        loadimg();
-    }, []);
-
     function loadimg() {
         if (movie) {
             if (movie._id == '5cd95395de30eff6ebccde5d') {
-                imagem = returnof;
+                setImagem2(returnof);
+                setSwitcher(false);
+                return imagem2;
             }
             if (movie._id == '5cd95395de30eff6ebccde5b') {
-                imagem = two;
+                setImagem2(two);
+                setSwitcher(false);
+                return imagem2;
+            } else {
+                setSwitcher(false);
+                return imagem2;
             }
         }
     }
 
+    const nome = filmeimagem.filter(i => i.id === params.movie);
+    console.log(nome[0].imagem);
     return (
         <>
             <Title>
@@ -79,7 +93,8 @@ const Repository: React.FC = () => {
 
             {movie && (
                 <Container>
-                    <img src={imagem} alt="poster" />
+                    <img src={nome[0].imagem} alt="poster" />
+                    {/* <h1>{nome}</h1> */}
                     <h1>{movie.name}</h1>
                     <p>
                         Run Time In Minutes:
