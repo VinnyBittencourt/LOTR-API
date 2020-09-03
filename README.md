@@ -9,4 +9,3 @@
 
 ### Projeto feito por:
 - Vinícius de Ataídes Bittencourt;
-- Marcelo Carvalho de Queiroz;
